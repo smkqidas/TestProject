@@ -1,0 +1,21 @@
+.width100{
+	width:100%;
+}
+.canvas_box{
+	position: relative;
+}
+#baseImg{
+	opacity: 0;
+	z-index: 0;
+	position: relative;
+}
+.canvas_box{
+	display: inline-block;
+	max-width: 100%;
+}
+.canvas_box > *{
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	z-index: 1;
+}
