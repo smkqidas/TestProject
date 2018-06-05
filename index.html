@@ -12,13 +12,18 @@
       <div class="row">
         <div class="col-sm-6">
         <img src="images/skirts/mini_scirt.png" class="get_skirts" data-src="images/canvas/mini_scirt_canvas.png">
+        <img src="images/top/top_1.png" class="get_top" data-src="images/canvas/top/top_1.png">
+        <img class="get_fabric" style="width: 100px;height: 100px;object-fit: none;" src="images/fabric/fabric_1.png">
+        <img class="get_fabric" style="width: 100px;height: 100px;object-fit: none;" src="images/fabric/fabric_2.png">
         </div>
         <div class="col-sm-6">
           <span class="canvas_box">
             <img src="images/base.png" id="baseImg" class="width100">
             <canvas id="viewport"></canvas>
             <canvas id="skirt"></canvas>
-            <img src="images/arms.png" alt="arms" class="width100">
+            <canvas id="skirtfabric"></canvas>
+            <canvas id="top"></canvas>
+            <canvas id="hands"></canvas>
           </span>
         </div>
       </div>
@@ -26,38 +31,7 @@
     <!-- scripts -->
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
-    <script>
-      var baseImg = document.getElementById('baseImg');
-      var canvas = document.getElementById('viewport'),
-      context = canvas.getContext('2d'),
-      skirtCanvas = document.getElementById('skirt'),
-      skirt = skirtCanvas.getContext('2d');
-
-      make_base();
-
-      function make_base()
-      {
-        base_image = new Image();
-        base_image.src = 'images/base.png';
-        base_image.onload = function(){
-          canvas.height = baseImg.height ;
-          canvas.width = baseImg.width ;
-          skirtCanvas.height = baseImg.height ;
-          skirtCanvas.width = baseImg.width ;
-          context.drawImage(base_image, 0, 0,baseImg.width,baseImg.height);
-          skirt.drawImage();
-        }
-      }
-      $(document).ready(function(){
-        $('.get_skirts').click();
-      })
-      $('.get_skirts').click(function(){
-        var Thissrc = $(this).data('src');
-        skirtImage = new Image();
-        skirtImage.src = Thissrc;
-        skirt.drawImage(skirtImage, 0, 0,baseImg.width,baseImg.height);
-      })
-    </script>
+    <script src="js/custom.js"></script>
 
   </body>
 </html>
